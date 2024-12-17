@@ -19,7 +19,7 @@ mod day13;
 mod day14;
 mod day15;
 mod day16;
-// mod day17;
+mod day17;
 // mod day18;
 // mod day19;
 // mod day20;
@@ -81,7 +81,7 @@ fn main() {
         SelectedDay::Day14 => { print!("day 14 part a:"); day14::a(); print!("day 14 part b:"); day14::b(); }
         SelectedDay::Day15 => { print!("day 15 part a:"); day15::a(); print!("day 15 part b:"); day15::b(); }
         SelectedDay::Day16 => { print!("day 16 part a:"); day16::a(); print!("day 16 part b:"); day16::b(); }
-        SelectedDay::Day17 => { /* print!("day 17 part a:"); day17::a(); print!("day 17 part b:"); day17::b(); */ }
+        SelectedDay::Day17 => { print!("day 17 part a:"); day17::a(); print!("day 17 part b:"); day17::b(); }
         SelectedDay::Day18 => { /* print!("day 18 part a:"); day18::a(); print!("day 18 part b:"); day18::b(); */ }
         SelectedDay::Day19 => { /* print!("day 19 part a:"); day19::a(); print!("day 19 part b:"); day19::b(); */ }
         SelectedDay::Day20 => { /* print!("day 20 part a:"); day20::a(); print!("day 20 part b:"); day20::b(); */ }
