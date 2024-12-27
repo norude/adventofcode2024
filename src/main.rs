@@ -59,6 +59,7 @@ enum SelectedDay {
     Day23,
     Day24,
     Day25,
+    All,
 }
 fn main() {
     let cli = Cli::parse();
@@ -88,6 +89,57 @@ fn main() {
         SelectedDay::Day22 => { print!("day 22 part a:"); day22::a(); print!("day 22 part b:"); day22::b(); }
         SelectedDay::Day23 => { print!("day 23 part a:"); day23::a(); print!("day 23 part b:"); day23::b(); }
         SelectedDay::Day24 => { print!("day 24 part a:"); day24::a(); print!("day 24 part b:"); day24::b(); }
-        SelectedDay::Day25 => { print!("day 25:"); day25::a() }
+        SelectedDay::Day25 => { print!("day 25:"); day25::a() },
+        SelectedDay::All => {
+            print!("day 1 part a:"); day1::a();
+            print!("day 1 part b:"); day1::b();
+            print!("day 2 part a:"); day2::a();
+            print!("day 2 part b:"); day2::b();
+            print!("day 3 part a:"); day3::a();
+            print!("day 3 part b:"); day3::b();
+            print!("day 4 part a:"); day4::a();
+            print!("day 4 part b:"); day4::b();
+            print!("day 5 part a:"); day5::a();
+            print!("day 5 part b:"); day5::b();
+            print!("day 6 part a:"); day6::a();
+            print!("day 6 part b:"); day6::b();
+            print!("day 7 part a:"); day7::a();
+            print!("day 7 part b:"); day7::b();
+            print!("day 8 part a:"); day8::a();
+            print!("day 8 part b:"); day8::b();
+            print!("day 9 part a:"); day9::a();
+            print!("day 9 part b:"); day9::b();
+            print!("day 10 part a:"); day10::a();
+            print!("day 10 part b:"); day10::b();
+            print!("day 11 part a:"); day11::a();
+            print!("day 11 part b:"); day11::b();
+            print!("day 12 part a:"); day12::a();
+            print!("day 12 part b:"); day12::b();
+            print!("day 13 part a:"); day13::a();
+            print!("day 13 part b:"); day13::b();
+            print!("day 14 part a:"); day14::a();
+            print!("day 14 part b:"); day14::b();
+            print!("day 15 part a:"); day15::a();
+            print!("day 15 part b:"); day15::b();
+            print!("day 16 part a:"); day16::a();
+            print!("day 16 part b:"); day16::b();
+            print!("day 17 part a:"); day17::a();
+            print!("day 17 part b:"); day17::b();
+            print!("day 18 part a:"); day18::a();
+            print!("day 18 part b:"); day18::b();
+            print!("day 19 part a:"); day19::a();
+            print!("day 19 part b:"); day19::b();
+            print!("day 20 part a:"); day20::a();
+            print!("day 20 part b:"); day20::b();
+            print!("day 21 part a:"); day21::a();
+            print!("day 21 part b:"); day21::b();
+            print!("day 22 part a:"); day22::a();
+            print!("day 22 part b:"); day22::b();
+            print!("day 23 part a:"); day23::a();
+            print!("day 23 part b:"); day23::b();
+            print!("day 24 part a:"); day24::a();
+            print!("day 24 part b:"); day24::b();
+            print!("day 25:"); day25::a();
+        }
     }
 }

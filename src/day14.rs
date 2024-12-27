@@ -55,18 +55,11 @@ pub fn a() {
     }
     println!("{}", a * b * c * d);
 }
-fn pause(msg: &String) {
-    let mut stdout = stdout();
-    stdout.write_all(msg.as_bytes()).unwrap();
-    stdout.flush().unwrap();
-    #[allow(clippy::unused_io_amount)]
-    stdin().read(&mut [0]).unwrap();
-}
 pub fn b() {
     const HEIGHT: usize = 103;
     const WIDTH: usize = 101;
     let robots = read();
-    for steps in 0.. {
+    'l: for steps in 0.. {
         let mut grid = [[false; WIDTH]; HEIGHT];
 
         #[allow(clippy::cast_possible_wrap, clippy::cast_possible_truncation)]
@@ -89,9 +82,17 @@ pub fn b() {
             for row in grid {
                 println!("{}", row.map(|x| if x { '█' } else { ' ' }).iter().join(""));
             }
-            pause(&format!(
-                "Press Enter to continue, btw {steps} steps already passed"
-            ));
+            {
+                let msg: &String =
+                    &format!("Press Enter to continue, <any key>+Enter to stop, {steps} steps already passed:");
+                let mut stdout = stdout();
+                stdout.write_all(msg.as_bytes()).unwrap();
+                stdout.flush().unwrap();
+                let r = stdin().read(&mut [0,0]).unwrap();
+                if r == 2 {
+                    break 'l;
+                }
+            };
         }
     }
 }

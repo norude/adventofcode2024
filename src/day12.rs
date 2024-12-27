@@ -88,7 +88,8 @@ fn sides(part: &HashSet<(usize, usize)>) -> usize {
                 4 - usize::from(
                     part.contains(&(pos.0 + 1, pos.1 + 1)) || part.contains(&(pos.0, pos.1 + 1)),
                 ) - usize::from(
-                    part.contains(&(pos.0 + 1, pos.1 - 1)) || part.contains(&(pos.0, pos.1 - 1)),
+                    part.contains(&(pos.0 + 1, pos.1.wrapping_sub(1)))
+                        || part.contains(&(pos.0, pos.1.wrapping_sub(1))),
                 );
         }
         if part.contains(&(pos.0, pos.1 + 1)) {
@@ -96,7 +97,8 @@ fn sides(part: &HashSet<(usize, usize)>) -> usize {
                 4 - usize::from(
                     part.contains(&(pos.0 + 1, pos.1 + 1)) || part.contains(&(pos.0 + 1, pos.1)),
                 ) - usize::from(
-                    part.contains(&(pos.0 - 1, pos.1 + 1)) || part.contains(&(pos.0 - 1, pos.1)),
+                    part.contains(&(pos.0.wrapping_sub(1), pos.1 + 1))
+                        || part.contains(&(pos.0.wrapping_sub(1), pos.1)),
                 );
         }
     }
