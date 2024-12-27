@@ -55,9 +55,13 @@ pub fn a() {
     }
     println!("{}", a * b * c * d);
 }
+
+const HUMAN: bool = false;
+
 pub fn b() {
     const HEIGHT: usize = 103;
     const WIDTH: usize = 101;
+    let mut skipped = 0;
     let robots = read();
     'l: for steps in 0.. {
         let mut grid = [[false; WIDTH]; HEIGHT];
@@ -79,20 +83,28 @@ pub fn b() {
             .any(|(a, b)| a && b);
 
         if intresting {
-            for row in grid {
-                println!("{}", row.map(|x| if x { '█' } else { ' ' }).iter().join(""));
-            }
-            {
-                let msg: &String =
+            if HUMAN {
+                for row in grid {
+                    println!("{}", row.map(|x| if x { '█' } else { ' ' }).iter().join(""));
+                }
+                {
+                    let msg: &String =
                     &format!("Press Enter to continue, <any key>+Enter to stop, {steps} steps already passed:");
-                let mut stdout = stdout();
-                stdout.write_all(msg.as_bytes()).unwrap();
-                stdout.flush().unwrap();
-                let r = stdin().read(&mut [0,0]).unwrap();
-                if r == 2 {
+                    let mut stdout = stdout();
+                    stdout.write_all(msg.as_bytes()).unwrap();
+                    stdout.flush().unwrap();
+                    let r = stdin().read(&mut [0, 0]).unwrap();
+                    if r == 2 {
+                        break 'l;
+                    }
+                };
+            } else {
+                if skipped == 1 {
+                    println!("{steps}");
                     break 'l;
                 }
-            };
+                skipped += 1;
+            }
         }
     }
 }
