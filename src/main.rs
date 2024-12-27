@@ -1,5 +1,4 @@
 #![warn(clippy::all, clippy::pedantic, clippy::nursery)]
-#![allow(dead_code)]
 
 use clap::{Parser, Subcommand};
 
@@ -89,6 +88,6 @@ fn main() {
         SelectedDay::Day22 => { print!("day 22 part a:"); day22::a(); print!("day 22 part b:"); day22::b(); }
         SelectedDay::Day23 => { print!("day 23 part a:"); day23::a(); print!("day 23 part b:"); day23::b(); }
         SelectedDay::Day24 => { print!("day 24 part a:"); day24::a(); print!("day 24 part b:"); day24::b(); }
-        SelectedDay::Day25 => { print!("day 25 part a:"); day25::a(); print!("day 25 part b:"); day25::b(); }
+        SelectedDay::Day25 => { print!("day 25:"); day25::a() }
     }
 }

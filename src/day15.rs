@@ -36,22 +36,6 @@ impl Dir {
             Self::Right => (x.wrapping_add(1), y),
         }
     }
-    const fn rotate_right(self) -> Self {
-        match self {
-            Self::Up => Self::Right,
-            Self::Right => Self::Down,
-            Self::Down => Self::Left,
-            Self::Left => Self::Up,
-        }
-    }
-    const fn rotate_left(self) -> Self {
-        match self {
-            Self::Up => Self::Left,
-            Self::Left => Self::Down,
-            Self::Down => Self::Right,
-            Self::Right => Self::Up,
-        }
-    }
     const fn step_n(self, (x, y): Pos, n: i32) -> Pos {
         #[allow(
             clippy::cast_sign_loss,

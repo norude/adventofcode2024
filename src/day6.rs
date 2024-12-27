@@ -42,14 +42,6 @@ impl Direction {
             Self::Left => Self::Up,
         }
     }
-    const fn rotate_left(self) -> Self {
-        match self {
-            Self::Up => Self::Left,
-            Self::Left => Self::Down,
-            Self::Down => Self::Right,
-            Self::Right => Self::Up,
-        }
-    }
     const fn unstep(self, (x, y): (usize, usize)) -> (usize, usize) {
         match self {
             Self::Up => (x, y + 1),
